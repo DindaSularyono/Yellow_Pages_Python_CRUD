@@ -1,4 +1,4 @@
-# UNIVERSAL FUNCTION
+# GLOBAL FUNCTION
 # A. Search business Index by code
 def searchIndex (code):
     for business in yellowPages:
@@ -101,7 +101,7 @@ def validNewAddress():
     inputAddress = input("Enter the Address: ")
     while True:
         inputPostalCode = input("Specify the postal codes: ")
-        if inputPostalCode.isdigit() and len(inputPostalCode) ==6:
+        if inputPostalCode.isdigit() and len(inputPostalCode) ==5:
             postalCode=inputPostalCode
             return inputAddress+" "+postalCode
         else:
@@ -205,8 +205,18 @@ def createBusiness():
     newBusiness['Website'] = validNewWebsite()
     newBusiness['Industry'] = validNewIndustry()
     newBusiness['Address'] = validNewAddress()
-    yellowPages.append(newBusiness)
-    print("The new business has been added successfully")
+    print("These are the details of new business you want to create:")
+    printBusinessDetail(newBusiness)
+    answer = input("Do you want to continue adding the business to directory? (Y/N): ").strip().lower()
+    if answer =="y":
+        yellowPages.append(newBusiness)
+        print("The new business has been added successfully")
+        mainMenu ()
+    elif answer =="n":
+        print ("Canceling add the new business, return to main menu.\n") 
+        mainMenu ()
+    else: 
+        print("Invalid answer. Please try again.\n")
             
 #==============================================================================================================================#
 
@@ -231,31 +241,16 @@ def editBusinessMenu(business):
     while True:        
         print("""
 Which business details you want to edit?:
-1. Business Code
-2. Business Name
-3. Business Phone Number
-4. Business Website
-5. Business Industry
-6. Business Address
+1. Business Name
+2. Business Phone Number
+3. Business Website
+4. Business Industry
+5. Business Address
 0. Cancel
 """)
-        # Update Business Code
-        answer = input("Your answer (0-6): ")
-        if answer == "1":
-            updateCode=validNewCode()
-            answer = input("Do you want to save the edit? (Y/N): ").strip().lower()
-            if answer =="y":
-                business["Code"] = updateCode
-                print("Changes to your business code have been saved.")
-                return  
-            elif answer =="n":
-                print ("Discard edit, return to main menu.\n\n_________________________________________________________________") 
-                mainMenu ()
-            else: 
-                print("Invalid answer. Please try again\n")  
-
+        answer = input("Your answer (0-5): ")
         # Update Business Name
-        elif answer == "2":
+        if answer == "1":
             updateName=input("Enter the business name: ")
             answer = input("Do you want to save the edit? (Y/N): ").strip().lower()
             if answer =="y":
@@ -269,7 +264,7 @@ Which business details you want to edit?:
                 print("Invalid answer. Please try again\n")
 
         # Update Business Phone Number
-        elif answer == "3":
+        elif answer == "2":
             updatePhone=validNewPhone()
             answer = input("Do you want to save the edit? (Y/N): ").strip().lower()
             if answer =="y":
@@ -282,7 +277,7 @@ Which business details you want to edit?:
             else: 
                 print("Invalid answer. Please try again\n")
         # Update Business Website
-        elif answer == "4":
+        elif answer == "3":
             updateWebsite= validNewWebsite()
             answer = input("Do you want to save the edit? (Y/N): ").strip().lower()
             if answer =="y":
@@ -296,7 +291,7 @@ Which business details you want to edit?:
                 print("Invalid answer. Please try again\n")   
 
         # Update Business Industry
-        elif answer == "5":
+        elif answer == "4":
             updateIndustry=validNewIndustry()
             answer = input("Do you want to save the edit? (Y/N): ").strip().lower()
             if answer =="y":
@@ -310,7 +305,7 @@ Which business details you want to edit?:
                 print("Invalid answer. Please try again\n")  
         
         # Update Businesss Address
-        elif answer == "6":
+        elif answer == "5":
             updateAddress=validNewAddress()
             answer = input("Do you want to save the edit? (Y/N): ").strip().lower()
             if answer =="y":
