@@ -63,7 +63,7 @@ Represent contact data in the Yellow Pages CRUD Program. The following fields ar
 Code: (String, Primary Key) - A unique identifier for each business.
 Name: (String) - The name of the business.
 Phone Number: (String) - The primary phone number for the business.
-Email: (String) - The email address of the business.
+Website: (String) - The website address of the business.
 Address: (String) - The physical address of the business.
 These fields are designed to capture all necessary information for each business, ensuring comprehensive and organized data management within the Yellow Pages CRUD Program.
 
