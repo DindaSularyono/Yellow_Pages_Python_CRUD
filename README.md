@@ -8,47 +8,42 @@ This project caters to the digital directory industry, specifically addressing t
 
 **Benefits:**
 
-* Efficiency in data management processed with automated updates
-* Enhanced user experience through accurate and accessible business information
-* Scalability to handle a growing number of listings and user interactions
-* Integration capabilities with other systems for streamlined workflows
-* Data insights and analytics to understand user behavior and market trends
+* Centralized database making it easy to access and manage. Contacts are organized in a structured format, ensuring consistency and ease of use.
+* Quick access to contact information and automates the processes of adding, updating, and deleting contacts, reducing manual effort and errors.
+* User-friendly interface, provides clear prompts for each CRUD operation and includes error handling to guide users and prevent incorrect operations.
+* Scalability to handle a growing number of listings and user interactions. Can be easily expanded or integrated with other systems to accommodate growing needs.
+* The program can be customized with additional fields and functionalities, and its settings can be configured to suit various use cases and preferences.
+
 
 **Target Users:**
 
-This application is designed for consumers, business owners, advertisers, and service providers to facilitate their search and connection with local businesses and services. It aims to streamline the tasks of finding, contacting, and exploring information related to various businesses listed in the Yellow Pages directory.
+This application is designed for consumers, investor, and business partners to facilitate their search and connection with other businesses. It aims to streamline the tasks of finding, contacting, and exploring information related to various businesses listed in the Yellow Pages directory.
 
 ## Features
 
 * **Create:**
-    * Add new business listing entries with essential details like business name, category, contact information, and location.
-    * Implement validation rules to ensure data integrity (if applicable, e.g., unique identifiers, data type checks).
+    * Add new business listing entries with essential details like business code as primary key, name, phone number, website, industry, and location
+    * Implement validation rules to ensure data integrity using unique identifiers and data type checks.
 * **Read:**
-    * Search and retrieve specific business listing records by applying filters based on business name, category, or location.
+    * Search and retrieve specific business listing records by applying filters based on business code.
     * Display comprehensive information for each business listing in a user-friendly format.
-    * Integrate pagination and sorting capabilities for large datasets.
 * **Update:**
     * Modify existing business listing data to reflect changes in relevant details.
     * Provide clear confirmation or error messages based on update success or failure.
 * **Delete:**
     * Allow for the removal of unwanted business listing records with appropriate authorization checks.
-    * Implement soft delete functionality to prevent permanent data loss.
 
 ## Installation
 
 1. **Prerequisites:**
-    * Python version (specify the required version)
-    * Additional dependencies (list any required packages)
+    * Python version 3.12.3
 
 2. **Installation:**
     ```bash
-    git clone [https://github.com/](https://github.com/)<your-username>/<your-repo-name>.git
-    cd <your-repo-name>
-    pip install -r requirements.txt  # If using a requirements.txt file
+    git clone [https://github.com/](https://github.com/)DindaSularyono/Yellow_Pages_Python_CRUD.git
+    cd Yellow_Pages_Python_CRUD
     ```
 
-3. **Database Setup (if applicable):**
-    Follow specific instructions for configuring your database connection, aligning with the business's chosen database management system.
 
 ## Usage
 
@@ -58,16 +53,19 @@ This application is designed for consumers, business owners, advertisers, and se
     ```
 
 2. **CRUD Operations:**
-    * **Create:** Add a new [Data Entity] record, for example, a new customer in a customer management system, providing details like name, contact information, and preferences.
-    * **Read:** Search and retrieve customer information by name, ID, or other relevant criteria.
-    * **Update:** Modify customer details, such as updating their address or contact details.
-    * **Delete:** Remove a customer record from the system (with appropriate authorization, if applicable).
+    * **Create:** Add a new business record, providing details like name, phone, website, industry, address. 
+    * **Read:** Search and retrieve business information by business code or other relevant criteria.
+    * **Update:** Modify business details, such as updating their address or contact details.
+    * **Delete:** Remove a business record from the system with appropriate authorization.
 
 ## Data Model
-This project utilizes a [Data Structure] (e.g., relational database, JSON documents) to represent [Data Entity] data. The following fields are typically stored:
-   * [Field 1]: (Data type) - Description of the field's purpose in the business context.
-   * [Field 2]: (Data type) - Description of the field's purpose in the business context.
-   * ... (List all relevant fields)
+Represent contact data in the Yellow Pages CRUD Program. The following fields are typically stored:
+Code: (String, Primary Key) - A unique identifier for each business.
+Name: (String) - The name of the business.
+Phone Number: (String) - The primary phone number for the business.
+Email: (String) - The email address of the business.
+Address: (String) - The physical address of the business.
+These fields are designed to capture all necessary information for each business, ensuring comprehensive and organized data management within the Yellow Pages CRUD Program.
 
 ## Contributing
 We welcome contributions to this project! Please feel free to open a pull request, sent to [your_email] or submit an issue if you encounter any problems or have suggestions for improvements.
